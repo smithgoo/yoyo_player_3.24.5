@@ -19,7 +19,6 @@ class TvPage extends GetView<TvController> {
     return GetBuilder<TvController>(
       builder: (_) {
         return Scaffold(
-          appBar: AppBar(title: Text("M3U 列表")),
           body: Obx(
             () => ListView.builder(
               itemCount: controller.linkArr.length,
