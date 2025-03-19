@@ -1,0 +1,184 @@
+name: yoyo_player
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # 图片缓存 https://pub.dev/packages/cached_network_image
+  cached_network_image: ^3.3.1
+  # cookie管理器 https://pub.dev/packages/cookie_jar
+  cookie_jar: ^4.0.8
+  # Apple风格图标 https://pub.dev/packages/cupertino_icons
+  cupertino_icons: ^1.0.8
+  # 日期格式化 https://pub.dev/packages/date_format
+  date_format: ^2.0.9
+  # 区域设置 https://pub.dev/packages/devicelocale
+  devicelocale: ^0.8.1
+  # 网络请求 https://pub.dev/packages/dio
+  dio: ^5.7.0
+  # Dio的cookie管理器 https://pub.dev/packages/dio_cookie_manager
+  dio_cookie_manager: ^3.1.1
+  # 拓展图像 https://pub.dev/packages/extended_image
+  extended_image: ^8.0.3
+  # 事件总线 https://pub.dev/packages/event_bus
+  event_bus: ^2.0.1
+  # https://pub.dev/packages/flutter_easyrefresh (2.0之后不再维护，使用下面的)
+  flutter_easyrefresh: 2.2.2
+  # https://pub.dev/packages/easy_refresh
+  easy_refresh: ^3.4.0
+  # 动画加载指示器 https://pub.dev/packages/flutter_spinkit
+  flutter_spinkit: ^5.2.1
+#  flutter_swiper: 1.1.6 （轮播图功能 待替换）
+  # https://pub.dev/packages/flutter_webview_plugin
+#  flutter_webview_plugin: 0.4.0
+  # webView插件 https://pub.dev/packages/webview_flutter
+  webview_flutter: ^4.10.0
+  # 状态管理 https://pub.dev/packages/get
+  get: 4.6.6
+  # 图片选择 https://pub.dev/packages/image_picker
+  image_picker: ^1.1.2
+  # https://pub.dev/packages/image_cropper
+  # image_cropper: 4.0.1
+  # Toast https://pub.dev/packages/oktoast
+  oktoast: 3.4.0
+  # 路径获取 https://pub.dev/packages/path_provider
+  path_provider: ^2.1.5
+  # 安卓版本更新库 https://pub.dev/packages/flutter_xupdate
+  # flutter_xupdate: 3.0.0
+  # 程序信息 https://pub.dev/packages/package_info_plus
+  package_info_plus: ^8.3.0
+  # 权限处理 https://pub.dev/packages/permission_handler
+  permission_handler: ^11.3.1
+  # https://pub.dev/packages/provider
+  provider: ^6.1.2
+  # https://pub.dev/packages/shared_preferences
+  shared_preferences: ^2.3.3
+  # 分享 https://pub.dev/packages/share_plus
+  share_plus: ^10.0.2
+  # 启动URL插件 https://pub.dev/packages/url_launcher
+  url_launcher: ^6.3.1
+  # https://pub.dev/packages/badges
+  badges : ^3.1.2
+  # 下拉菜单 https://pub.dev/packages/gzx_dropdown_menu
+  gzx_dropdown_menu: 3.1.0
+  # 通用平台 https://pub.dev/packages/universal_platform
+  universal_platform: ^1.1.0
+  # 适配屏幕 https://pub.dev/packages/flutter_screenutil
+  flutter_screenutil: ^5.9.3
+  # Dart 常用工具类库 https://pub.dev/packages/common_utils
+  common_utils: 2.1.0
+  # https://pub.dev/packages/sp_util
+  sp_util: 2.0.3
+  # 格式化String https://pub.dev/packages/sprintf
+  sprintf: ^7.0.0
+  # 处理键盘事件 https://pub.dev/packages/keyboard_actions
+  keyboard_actions: ^4.2.0
+  # 获取当前设备信息 https://pub.dev/packages/device_info_plus
+  device_info_plus: ^10.1.2
+  # https://pub.dev/packages/toggle_switch
+  toggle_switch: ^2.3.0
+  # https://pub.dev/packages/qr_code_scanner
+  # qr_code_scanner: 1.0.1
+  # https://pub.dev/packages/calendar_date_picker2
+#  calendar_date_picker2: 0.5.2
+#  bruno: 2.0.0
+  # https://pub.dev/packages/flutter_local_notifications
+  flutter_local_notifications: ^18.0.1
+  # https://pub.dev/packages/web_socket_channel
+  web_socket_channel: ^3.0.1
+  # https://pub.dev/packages/flutter_easyloading
+  flutter_easyloading: 3.0.5
+  # https://pub.dev/packages/ota_update
+  # ota_update: ^6.0.0
+  # https://pub.dev/packages/flutter_speed_dial
+  flutter_speed_dial: 7.0.0
+  # https://pub.dev/packages/searchfield
+  searchfield: ^1.1.9
+  # https://pub.dev/packages/connectivity_plus
+  connectivity_plus: ^6.1.0
+  # https://github.com/entronad/flutter_echarts
+#  flutter_echarts: 2.5.0
+  # https://pub.dev/packages/dropdown_search
+  dropdown_search: ^6.0.1
+  # https://pub:dev/packages/extended_nested_scroll_view
+  extended_nested_scroll_view: ^6.0.0
+  # https://pub.dev/packages/flutter_pickers
+  flutter_pickers: ^2.1.9
+  # https://pub.dev/packages/carousel_slider
+  carousel_slider: ^5.0.0
+  # https://pub.dev/packages/photo_view
+  photo_view: ^0.15.0
+  # https://pub.dev/packages/flutter_staggered_grid_view
+  flutter_staggered_grid_view: ^0.7.0
+  
+  better_player: ^0.0.83  # 最新版本·
+  # flutter_map: ^4.0.0
+  # location: ^4.3.0
+  # latlong2: ^0.8.1
+  # geocoding: ^3.0.0
+  # pinput: ^5.0.0
+  # intl: ^0.19.0
+
+# dependency_overrides:
+#       win32: ^5.5.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^5.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  # assets:
+  #   - assets/
+  #   - assets/tab/
+  #   - assets/images/
+  #   - assets/mine/
+  #   - assets/images/home/
+  #   - assets/tweets/
+  #   - assets/login/
