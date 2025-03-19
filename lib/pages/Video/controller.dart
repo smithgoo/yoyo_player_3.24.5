@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:better_player/better_player.dart';
+import 'package:yoyo_player/network/homePage/homePage.dart';
 import 'package:yoyo_player/network/homePage/homePageModel.dart';
 import 'index.dart';
 
@@ -11,14 +12,36 @@ class VideoController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    // self.linkArr =@[@"https://iptv-org.github.io/iptv/countries/cn.m3u",@"https://iptv-org.github.io/iptv/countries/jp.m3u",@"https://iptv-org.github.io/iptv/countries/kr.m3u",@"https://iptv-org.github.io/iptv/countries/us.m3u",@"https://iptv-org.github.io/iptv/countries/uk.m3u",@"https://iptv-org.github.io/iptv/countries/th.m3u",@""];
+    // self.namesArr =@[@"🇨🇳中国",@"🇯🇵日本",@"🇰🇷韩国",@"🇺🇸美国",@"🇬🇧英国",@"🇹🇭泰国",@"☁️热播网剧"];
     videoData = Get.arguments; // 获取传递的数据
     if (videoData != null) {
       state.model = videoData;
       print(videoData.title);
       videoUrl = videoData.address?.split('#')[0] ?? "";
+      // videoUrl = 'https://video.bread-tv.com:8091/hls-live24/online/index.m3u8';
       state.items = videoData.address?.split('#');
       initVideoPlayer();
       update();
+    }
+
+    // getinfo();
+  }
+
+  getinfo() async {
+    const url = "https://iptv-org.github.io/iptv/countries/cn.m3u";
+
+    try {
+      List<Map<String, String>> channels =
+          await HomePageAPI.fetchM3UChannels(url);
+      for (var channel in channels) {
+        print("名称: ${channel['name']}");
+        print("Logo: ${channel['icon']}");
+        print("播放地址: ${channel['url']}");
+        print("------------------------");
+      }
+    } catch (e) {
+      print("解析 M3U 失败: $e");
     }
   }
 

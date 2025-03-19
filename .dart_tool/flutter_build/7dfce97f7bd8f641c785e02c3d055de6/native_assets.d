@@ -1,0 +1,1 @@
+ /Users/didi/Documents/GitHub/yoyo_player_3.24.5/.dart_tool/flutter_build/7dfce97f7bd8f641c785e02c3d055de6/native_assets.yaml: 
