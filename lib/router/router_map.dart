@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yoyo_player/pages/Application/index.dart';
 import 'package:yoyo_player/pages/Application/view.dart';
+import 'package:yoyo_player/pages/TVsList/bindings.dart';
+import 'package:yoyo_player/pages/TVsList/view.dart';
 import 'package:yoyo_player/pages/Video/bindings.dart';
 import 'package:yoyo_player/pages/Video/view.dart';
 import 'package:yoyo_player/pages/test/bindings.dart';
@@ -20,6 +22,11 @@ class RouterMap {
       name: '/video',
       page: () => VideoPage(),
       binding: VideoBinding(),
+    ),
+    GetPage(
+      name: '/tvList',
+      page: () => TvslistPage(),
+      binding: TvslistBinding(),
     ),
   ];
 

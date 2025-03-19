@@ -105,6 +105,17 @@ class ApplicationController extends GetxController {
       ),
       BottomNavigationBarItem(
         activeIcon: Icon(
+          Icons.search,
+          size: 47.w,
+        ),
+        icon: Icon(
+          Icons.search,
+          size: 47.w,
+        ),
+        label: 'Search',
+      ),
+      BottomNavigationBarItem(
+        activeIcon: Icon(
           Icons.tv,
           size: 47.w,
         ),

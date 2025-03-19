@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:yoyo_player/pages/SearchView/view.dart';
+import 'package:yoyo_player/pages/Tv/view.dart';
 
 import 'package:yoyo_player/pages/home/view.dart';
 
@@ -19,7 +20,7 @@ class ApplicationPage extends GetView<ApplicationController> {
       children: <Widget>[
         HomePage(),
         SearchviewPage(),
-        // TvsviewPage(),
+        TvPage(),
       ],
     );
   }
@@ -51,13 +52,17 @@ class ApplicationPage extends GetView<ApplicationController> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
-                      [Icons.home, Icons.search][index], // 使用 item 中的图标
+                      [
+                        Icons.home,
+                        Icons.search,
+                        Icons.tv
+                      ][index], // 使用 item 中的图标
                       size: 24.sp,
                       color: isSelected ? Colors.red : Colors.grey, // 选中状态颜色
                     ),
                     SizedBox(height: 4.h), // 图标和文字的间距
                     Text(
-                      ['Home', 'search'][index], // 使用 item 中的标签
+                      ['Home', 'search', 'TV'][index], // 使用 item 中的标签
                       style: TextStyle(
                         fontSize: 12.sp,
                         color: isSelected ? Colors.red : Colors.grey, // 选中状态颜色

@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import 'index.dart';
 import 'widgets/widgets.dart';
 
-class TvPage extends GetView<TvController> {
+class TvslistPage extends GetView<TvslistController> {
   @override
-  final controller = Get.put<TvController>(TvController());
-  TvPage({Key? key}) : super(key: key);
+  final controller = Get.put<TvslistController>(TvslistController());
+  TvslistPage({Key? key}) : super(key: key);
 
   // 主视图
   Widget _buildView() {
@@ -16,10 +16,10 @@ class TvPage extends GetView<TvController> {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<TvController>(
+    return GetBuilder<TvslistController>(
       builder: (_) {
         return Scaffold(
-          appBar: AppBar(title: const Text("tv")),
+          appBar: AppBar(title: const Text("tvslist")),
           body: SafeArea(
             child: _buildView(),
           ),

@@ -28,23 +28,7 @@ class VideoController extends GetxController {
     // getinfo();
   }
 
-  getinfo() async {
-    const url = "https://iptv-org.github.io/iptv/countries/cn.m3u";
-
-    try {
-      List<Map<String, String>> channels =
-          await HomePageAPI.fetchM3UChannels(url);
-      for (var channel in channels) {
-        print("名称: ${channel['name']}");
-        print("Logo: ${channel['icon']}");
-        print("播放地址: ${channel['url']}");
-        print("------------------------");
-      }
-    } catch (e) {
-      print("解析 M3U 失败: $e");
-    }
-  }
-
+ 
   clickItemExchange(idx) {
     betterPlayerController.dispose();
     state.currentIdx = idx;
