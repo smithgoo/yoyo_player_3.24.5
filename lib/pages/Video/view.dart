@@ -116,7 +116,7 @@ class VideoPage extends GetView<VideoController> {
             body: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildPlayer(),
+                Expanded(child: _buildPlayer()),
                 _buildTitleView(),
                 _buildGradView(),
                 _buildInfoView([

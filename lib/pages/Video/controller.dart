@@ -28,7 +28,6 @@ class VideoController extends GetxController {
     // getinfo();
   }
 
- 
   clickItemExchange(idx) {
     betterPlayerController.dispose();
     state.currentIdx = idx;
@@ -50,6 +49,8 @@ class VideoController extends GetxController {
       BetterPlayerConfiguration(
         aspectRatio: null,
         autoPlay: true,
+        // expandToFill: true, // 让视频填充整个屏幕
+        // fullScreenByDefault: true, // 进入时默认全屏
         controlsConfiguration: BetterPlayerControlsConfiguration(
           enablePlaybackSpeed: true,
           enableFullscreen: true,
@@ -57,6 +58,11 @@ class VideoController extends GetxController {
       ),
       betterPlayerDataSource: dataSource,
     );
+
+    // 延迟进入全屏，确保 UI 已经渲染
+    // Future.delayed(Duration(milliseconds: 500), () {
+    //   betterPlayerController.enterFullScreen();
+    // });
   }
 
   closeAndFree() {

@@ -5,7 +5,23 @@ import 'index.dart';
 
 class TvController extends GetxController {
   TvController();
-
+  final List<String> linkArr = [
+    "https://iptv-org.github.io/iptv/countries/cn.m3u",
+    "https://iptv-org.github.io/iptv/countries/jp.m3u",
+    "https://iptv-org.github.io/iptv/countries/kr.m3u",
+    "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "https://iptv-org.github.io/iptv/countries/uk.m3u",
+    "https://iptv-org.github.io/iptv/countries/th.m3u",
+  ].obs;
+  List<String> namesArr = [
+    "🇨🇳中国",
+    "🇯🇵日本",
+    "🇰🇷韩国",
+    "🇺🇸美国",
+    "🇬🇧英国",
+    "🇹🇭泰国",
+    "☁️热播网剧"
+  ].obs;
   final state = TvState();
 
   /// 在 widget 内存中分配后立即调用。
@@ -32,20 +48,5 @@ class TvController extends GetxController {
     super.dispose();
   }
 
-  getinfo() async {
-    const url = "https://iptv-org.github.io/iptv/countries/cn.m3u";
 
-    try {
-      List<Map<String, String>> channels =
-          await HomePageAPI.fetchM3UChannels(url);
-      for (var channel in channels) {
-        print("名称: ${channel['name']}");
-        print("Logo: ${channel['icon']}");
-        print("播放地址: ${channel['url']}");
-        print("------------------------");
-      }
-    } catch (e) {
-      print("解析 M3U 失败: $e");
-    }
-  }
 }

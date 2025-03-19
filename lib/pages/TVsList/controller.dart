@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:yoyo_player/network/homePage/homePage.dart';
 
 import 'index.dart';
 
@@ -6,7 +7,7 @@ class TvslistController extends GetxController {
   TvslistController();
 
   final state = TvslistState();
-
+  var totalInfoList = [].obs;
   // tap
   void handleTap(int index) {
     Get.snackbar(
@@ -19,6 +20,25 @@ class TvslistController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    var info = Get.arguments; // 获取传递的数据
+    getinfo(info['link']);
+  }
+
+  getinfo(url) async {
+    try {
+      List<Map<String, String>> channels =
+          await HomePageAPI.fetchM3UChannels(url);
+      for (var channel in channels) {
+        print("名称: ${channel['name']}");
+        print("Logo: ${channel['icon']}");
+        print("播放地址: ${channel['url']}");
+        print("------------------------");
+        totalInfoList.add(channel);
+      }
+      update();
+    } catch (e) {
+      print("解析 M3U 失败: $e");
+    }
   }
 
   /// 在 onInit() 之后调用 1 帧。这是进入的理想场所
